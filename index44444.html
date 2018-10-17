@@ -1,5 +1,4 @@
-﻿@@ -0,0 +1,490 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head lang="en">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -428,8 +427,11 @@
             stop();
         }
     });
-    $(document).on('mousedown', function (e) {
+//    $(document).on('mousedown', function (e) {
+        $(document).on('click', function (e) {
+            alert(1);
         if ($(e.target).is($('.modal'))) {
+            alert(2);
             $(e.target).css('display', 'none');
 //    $('#phoneM').css('display','none');
             move();
@@ -437,6 +439,7 @@
     });
     /***禁止滑动***/
     function stop() {
+        alert('stop()');
         var top = 0;
         var length = Top.length;
         if(length == 0) {
@@ -452,6 +455,8 @@
     };
     /***取消滑动限制***/
     function move() {
+        alert('move()');
+
         var length = Top.length;
         console.dir('2');
         console.dir(-Top[length-2]+'px');
