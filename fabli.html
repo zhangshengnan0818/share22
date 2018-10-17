@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="css/common.css"/>
+</head>
+<body>
+<div class="hongbao" id="bang" style="width: 100%;margin: 0;border-radius: 0;">
+    <div class="hbhead"style="text-align:  center;">
+      <h2>领取红包排行榜</h2>
+    </div>
+    <div class="hbbody"style="position: fixed;top: 4rem;bottom:  0;left:  0;right: 0;height: auto;">
+      <div id="hblists" style="text-align:  center;">
+        <div id="hblist1">
+          <ul>
+            <li>
+              <span>No.1</span>
+              <img src="img/1.jpg" alt=""/>
+              <span>李翠花</span>
+              <span><b>2.88</b>元</span>
+            </li>
+            <li>
+              <span>No.2</span>
+              <img src="img/1.jpg" alt=""/>
+              <span>李翠花</span>
+              <span><b>2.88</b>元</span>
+            </li>
+            <li>
+              <span>No.3</span>
+              <img src="img/1.jpg" alt=""/>
+              <span>李翠花</span>
+              <span><b>2.88</b>元</span>
+            </li>
+            <li>
+              <span>No.4</span>
+              <img src="img/1.jpg" alt=""/>
+              <span>李翠花</span>
+              <span><b>2.88</b>元</span>
+            </li>
+            <li>
+              <span>No.4</span>
+              <img src="img/132.jpg" alt=""/>
+              <span>李翠花</span>
+              <span><b>2.88</b>元</span>
+            </li>
+            <li>
+              <span>No.4</span>
+              <img src="img/1.jpg" alt=""/>
+              <span>李翠花</span>
+              <span><b>2.88</b>元</span>
+            </li>
+            <li>
+              <span>No.4</span>
+              <img src="img/1.jpg" alt=""/>
+              <span>李翠花</span>
+              <span><b>2.88</b>元</span>
+            </li>
+            <li>
+              <span>No.4</span>
+              <img src="img/132.jpg" alt=""/>
+              <span>李翠花</span>
+              <span><b>2.88</b>元</span>
+            </li>
+            <li>
+              <span>No.4</span>
+              <img src="img/132.jpg" alt=""/>
+              <span>李翠花</span>
+              <span><b>2.88</b>元</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="js/jquery-1.11.3.js"></script>
+<!--点击事件-->
+<script>
+  $('#zBtn').on('click', function () {
+//    $('#zBtnM').css('display', 'block');
+    $('#joinM').css('display', 'block');
+
+  });
+  function join() {
+    $('#zBtnM').css('display', 'none');
+    $('#joinM').css('display', 'block');
+  }
+  $('.footer ul').on('click', 'li', function () {
+//  console.log(this.id==='callp');
+    if (this.id === 'callp') {
+      $('#phoneM').css('display', 'block');
+    } else if (this.id === 'join') {
+      $('#joinM').css('display', 'block');
+    }
+  });
+  $(document).on('mousedown', function (e) {
+    if ($(e.target).is($('.modal'))) {
+      $(e.target).css('display', 'none');
+//    $('#phoneM').css('display','none');
+    }
+  });
+</script>
+
+</body>
+</html>

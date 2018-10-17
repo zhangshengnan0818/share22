@@ -1,0 +1,532 @@
+@charset "utf-8";
+/*通用*/
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+dl,
+dt,
+dd {
+  margin: 0;
+  padding: 0;
+  border: none;
+  list-style: none;
+  font-weight: 400;
+}
+input,
+button,
+textarea {
+  border: none;
+  outline: none;
+}
+a,
+a:hover {
+  color: #333;
+  text-decoration: none;
+}
+b,
+i {
+  display: inline-block;
+}
+b {
+  font-weight: normal;
+}
+i {
+  font-style: normal;
+}
+html {
+  font-size: 16px !important;
+  background-color: #d40006;
+  color: #333333;
+}
+body {
+  font-family: PingFang Regular, Roboto-Regular, "微软雅黑";
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+/*自动滚动*/
+#show1,
+#show2 {
+  width: 100%;
+}
+#showBoard {
+  height: 2.3rem;
+  background: transparent;
+  overflow: hidden;
+}
+#showBoard ul {
+  list-style: none;
+}
+#showBoard ul li {
+  margin-top: 0.3rem;
+}
+#showBoard ul li img {
+  width: 2rem;
+  height: 2rem;
+  vertical-align: top;
+  border-radius: 50%;
+}
+#showBoard ul li span {
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 1rem;
+  color: #fff;
+}
+@-webkit-keyframes rotate360 {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes rotate360 {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/*旋转*/
+.rotateB {
+  -webkit-animation: rotate360 3s linear 1s 5 alternate;
+  animation: rotate360 3s linear infinite;
+}
+/*停止*/
+.pause {
+  animation-play-state: paused;
+}
+/*Btn赚*/
+.zBtn {
+  position: fixed;
+  z-index: 999;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  left: 0%;
+  top: 50%;
+  margin-top: -1.5rem;
+}
+.zBtn img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+/*头部*/
+.header,
+.footer {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  left: 0%;
+}
+.header {
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  height: 2.3rem;
+  padding-left: 1rem;
+}
+.header a {
+  position: absolute;
+  top: .25rem;
+  right: 2rem;
+  cursor: pointer;
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+/*底部*/
+.footer {
+  bottom: 0%;
+  height: 4rem;
+  text-align: center;
+  background-color: #fff;
+}
+.footer ul {
+  display: flex;
+  width: 100%;
+}
+.footer ul li {
+  flex: auto;
+}
+.footer ul li a {
+  display: inline-block;
+  height: 4rem;
+  line-height: 4rem;
+  width: 100%;
+}
+.footer ul li a img {
+  vertical-align: middle;
+}
+.fBtn a {
+  height: 4rem;
+  line-height: 4rem;
+}
+.fBtn img {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto;
+}
+.ctBtn img {
+  width: 9rem;
+  height: 3rem;
+}
+/*主体*/
+.main {
+  width: 100%;
+  margin-bottom: 4rem;
+  padding: 0 0 1rem 0;
+  text-align: center;
+}
+/*活动时间*/
+.timeC {
+  padding: 1rem 0;
+}
+.timeC h3 {
+  height: 2rem;
+  line-height: 2rem;
+}
+.timeC p {
+  font-size: 1rem;
+  height: 2rem;
+  line-height: 2rem;
+}
+.timeC p span {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  line-height: 2rem;
+  font-size: 12px;
+  background-color: #e37614;
+  border-radius: 50%;
+  margin: 0 5px;
+}
+/*进度条*/
+.progress {
+  padding: 2rem 0 0rem 0;
+}
+.progress .progressbar {
+  position: relative;
+  margin: 0 auto;
+  width: 90%;
+}
+.progress .progressbar div {
+  box-sizing: border-box;
+}
+.progress .progressbar .bar {
+  box-shadow: 0 0 10px #333;
+  height: 1.8rem;
+  border: 2px solid #fff;
+  background-color: #8b0000;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+.progress .progressbar .bar .cur {
+  position: absolute;
+  top: 0;
+  left: 0%;
+  width: 20%;
+  height: 100%;
+  background-color: #f90;
+  background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(0.25, rgba(255, 255, 255, 0.1)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.1)), color-stop(0.75, rgba(255, 255, 255, 0.1)), color-stop(0.75, transparent), to(transparent));
+  background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+  background-image: -o-linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+  background-size: 25px 25px;
+}
+.progress .progressbar .btn {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  margin-top: -1rem;
+  margin-left: -1rem;
+  z-index: 1;
+  height: 2.1rem;
+  width: 2.1rem;
+  background-color: #ffd600;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #333;
+}
+.progress .progressbar .btn span {
+  margin-left: 120%;
+  color: #ffd600;
+  height: 1.8rem;
+  line-height: 1.8rem;
+}
+.progress h3 {
+  color: #ffd600;
+  height: 3rem;
+  line-height: 3rem;
+}
+/*红包排行榜*/
+.hongbao {
+  width: 95%;
+  margin: 1rem auto;
+  border-radius: 5px;
+  box-shadow: 0 0 20px #000;
+  overflow: hidden;
+}
+.hongbao .hbhead {
+  background-color: #c80208;
+  color: #ffd600;
+  height: 4rem;
+  line-height: 4rem;
+}
+.hongbao .hbhead h2 {
+  font-weight: 600;
+}
+.hongbao .hbbody {
+  position: relative;
+  height: 20rem;
+  background-color: #fff;
+}
+.hongbao .hbbody .hbmask {
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(0, #ffffff, rgba(255, 255, 255, 0), #ffffff);
+}
+.hongbao .hbbody #hblists {
+  height: 100%;
+  overflow: hidden;
+}
+.hongbao .hbbody #hblists li {
+  height: 3rem;
+  line-height: 3rem;
+  border-bottom: 1px solid #f5f5f5;
+  font-size: 1.2rem;
+}
+.hongbao .hbbody #hblists li:nth-child(1) span:first-child {
+  color: #ffd600;
+}
+.hongbao .hbbody #hblists li:nth-child(2) span:first-child {
+  color: #ff974b;
+}
+.hongbao .hbbody #hblists li:nth-child(3) span:first-child {
+  color: mediumpurple;
+}
+.hongbao .hbbody #hblists li img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  vertical-align: top;
+  margin-top: 0.5rem;
+}
+.hongbao .hbbody #hblists li span:first-child {
+  float: left;
+  padding-left: 1rem;
+  font-size: 1.3rem;
+}
+.hongbao .hbbody #hblists li span:last-child {
+  float: right;
+  color: #ff974b;
+  padding-right: 1.2rem;
+}
+/*模态框*/
+.modal {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  outline: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-size: 1rem;
+}
+.modalDialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+  text-align: center;
+}
+.modalContent {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 65%;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 10px #333;
+  box-shadow: 0 0 10px #333;
+  background-clip: padding-box;
+  outline: 0;
+  overflow: hidden;
+  z-index: 1060;
+}
+.modalHead {
+  height: 40px;
+  line-height: 40px;
+  background-color: #c80208;
+  color: #ffd600;
+}
+.modalHead h3 {
+  font-weight: 600;
+}
+/*参团模态框*/
+#joinM {
+  display: none;
+}
+#joinM .modalContent {
+  margin-top: 40%;
+}
+#joinM .modalBody {
+  padding: 1rem 1rem 0 1rem;
+}
+#joinM .modalBody select {
+  width: 100%;
+  outline: none;
+  height: 2rem;
+  line-height: 2rem;
+}
+#joinM .modalBody .tblock {
+  text-align: left;
+}
+#joinM .modalBody .tblock p {
+  margin: 1rem 0 1rem .1rem;
+  font-size: .8rem;
+}
+#joinM .modalBody .tblock .info {
+  display: flex;
+  text-align: left;
+  margin: 0 0  1rem 0;
+}
+#joinM .modalBody .tblock .info label {
+  vertical-align: middle;
+}
+#joinM .modalBody .tblock .info label i {
+  width: 2rem;
+  height: 2rem;
+  background-color: #c80208;
+}
+#joinM .modalBody .tblock .info label i img {
+  width: 2rem;
+  height: 2rem;
+}
+#joinM .modalBody .tblock .info input {
+  background-color: #f5f5f5;
+  width: 100%;
+  height: 2rem;
+  line-height: 2rem;
+  padding: 0 1.5rem;
+}
+#joinM .modalFoot {
+  background-color: #fff;
+}
+#joinM .modalFoot a {
+  height: 2rem;
+  line-height: 2rem;
+  color: #ffd600;
+  font-weight: 600;
+  display: inline-block;
+  margin: 0rem auto;
+  background-color: #c80208;
+  padding: .3rem .7rem;
+  border-radius: .3rem;
+}
+#joinM .jszc {
+  height: 2rem;
+}
+/*赚模态框*/
+#zBtnM {
+  display: none;
+}
+#zBtnM a {
+  display: inline-block;
+  background-color: #f79f33;
+  color: #c80208;
+  font-weight: 600;
+  padding: .5rem 1.5rem;
+  border-radius: .5rem;
+  margin-top: 80%;
+}
+/*参与列表*/
+.peopleList {
+  background-color: #fff;
+  width: 95%;
+  margin: 1rem auto;
+  border-radius: 5px;
+  box-shadow: 0 0 20px #000;
+  overflow: hidden;
+}
+.peopleList .listHead img {
+  width: 100%;
+  height: auto;
+}
+.peopleList .lists {
+  display: flex;
+  flex-flow: row wrap;
+}
+.peopleList .lists .listItem {
+  flex: auto;
+  margin: .5rem;
+  max-width: 52px;
+}
+.peopleList .lists .listItem img {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+.peopleList .lists .listItem p {
+  font-size: .8rem;
+  height: 2rem;
+  line-height: 2rem;
+}
+/*图片展示区*/
+.picB img {
+  width: 100%;
+  height: auto;
+}
+/*media*/
+.media {
+  text-align: left;
+  padding: 1rem 2rem;
+}
+.media .mediaL {
+  display: inline-block;
+  padding-right: 10px;
+  vertical-align: top;
+}
+.media .mediaL img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}
+.media .mediaR {
+  display: inline-block;
+  text-align: left;
+}
+.media .mediaR p {
+  height: 1.5rem;
+  line-height: 1.5rem;
+  font-size: 0.8rem;
+}
+.media .mediaR p i {
+  width: 1rem;
+  height: 1rem;
+}
+.media .mediaR p .call {
+  padding: .2rem 0.5rem;
+  background-color: #c80208;
+  color: #ffd600;
+  font-weight: 600;
+  border-radius: .9rem;
+  box-shadow: 0 0 10px #333;
+  margin-left: .5rem;
+}

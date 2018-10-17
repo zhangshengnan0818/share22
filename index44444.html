@@ -1,0 +1,491 @@
+﻿@@ -0,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/common.css"/>
+</head>
+<body>
+<!--分享开始 -->
+<div class="modal" id="shareM">
+
+    <div class="share" >
+        <img  src="img/share.png" style="
+    width: 20%;
+    float: right;
+">
+    </div>
+    <p style="
+    width: 90%;
+    height: auto;
+    overflow: hidden;
+    zoom: 1;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 30px 20px;
+    background-color: rgba(255,255,255,0.9);
+    border-radius: 10px;
+    border: 1px #fff solid;
+    font-size: 0.4rem;
+    color: #000;
+    position: relative;
+">
+        <span id="close_login" class="icon-close"></span>
+        点击右上角三个点分享给您的好友！
+    </p>
+
+
+</div>
+<!--分享结束 -->
+<!--电话模态框-->
+<div class="modal" id="phoneM"><!--全屏-->
+    <div class="modalDialog" id="con"><!--相对定位-->
+        <div class="modalContent">
+            <div class="modalHead">
+                <h3>金牌顾问</h3>
+            </div>
+            <div class="modalBody">
+                <div class="media">
+                    <div class="mediaL">
+                        <img src="img/1.jpg" alt=""/>
+                    </div>
+                    <div class="mediaR">
+                        <p>小白</p>
+
+                        <p><i></i><span>136********</span><span class="call">一键拨打</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--参团模态框-->
+<div class="modal" id="joinM"><!--全屏-->
+    <div class="modalDialog"><!--相对定位-->
+        <div class="modalContent">
+            <div class="modalHead">
+                <h3>参团享好礼</h3>
+            </div>
+            <div class="modalBody">
+                <select name="hdlists" id="hdlists">
+                    <option value="活动一" selected>活动一</option>
+                    <option value="活动二">活动二</option>
+                </select>
+
+                <div class="tblock">
+                    <p>请留下您的联系方式以便我们即使联系您!</p>
+
+                    <div class="info">
+                        <label for="uname"><i><img src="img/客服优先.png" alt=""/></i></label>
+                        <input id="uname" type="text" placeholder="请填写真实姓名"/>
+                    </div>
+                    <div class="info">
+                        <label for="utel"><i><img src="img/手机.png" alt=""/></i></label>
+                        <input id="utel" type="text" placeholder="请输入手机号"/>
+                    </div>
+                </div>
+
+            </div>
+            <div class="modalFoot">
+                <a href="#">支付 <span id="price">13.14</span> 元立即参团</a>
+            </div>
+            <div class="jszc"></div>
+
+        </div>
+    </div>
+</div>
+<!--赚模态框-->
+<!--<div class="modal" M id="zBtnM">&lt;!&ndash;全屏&ndash;&gt;-->
+<!--<div class="modalDialog">&lt;!&ndash;相对定位&ndash;&gt;-->
+<!--<a href="javascript:join();" id="bmBtn">立即报名</a>-->
+<!--</div>-->
+<!--</div>-->
+
+
+<div class="header">
+    <div id="showBoard">
+        <div id="show1">
+            <ul>
+                <li>
+                    <img src="img/1.jpg" alt=""/>
+                    <span><b>小仙女儿</b> 获取了 <i>13.14</i> 的红包</span>
+                </li>
+                <li>
+                    <img src="img/2.png" alt=""/>
+                    <span><b>猪八戒</b> 获取了 <i>13.14</i> 的红包</span>
+                </li>
+                <li>
+                    <img src="img/132.jpg" alt=""/>
+                    <span><b>唐和尚</b> 获取了 <i>13.14</i> 的红包</span>
+                </li>
+            </ul>
+        </div>
+        <div id="show2"></div>
+    </div>
+    <audio id="music2" src="res/Nick%20Helm%20-%20No%20Survivors.mp3" autoplay="autoplay" loop="loop">你的浏览器不支持audio标签。
+    </audio>
+    <a href="javascript:playPause();" id="music_btn2" class="music rotateB"><img src="img/music@2x.png" width="30"
+                                                                                 height="30" border="0"></a>
+</div>
+
+<div id="zBtn" class="zBtn rotateB"><img src="img/zhuan.png" alt=""/></div>
+
+<div class="main">
+
+    <div class="picB">
+        <img src="img/head.jpg" alt=""/>
+    </div>
+
+    <div class="progress">
+        <div class="progressbar">
+            <div class="bar">
+                <div class="cur" style="
+    width: 20%;
+"></div>
+            </div>
+            <div class="btn" style="
+    left: 20%;
+">
+        <span style="
+    position:  relative;
+    top: -30px;
+    left: -30px;
+">20%</span>
+            </div>
+        </div>
+        <h3>已参团 <span>662</span>人</h3>
+    </div>
+
+    <div class="timeC">
+        <h3>活动截止倒计时</h3>
+
+        <div id="timer">
+            <p><span class="td">04</span>天<span class="th">04</span>时<span class="tm">09</span>分<span class="ts">07</span>秒
+            </p>
+        </div>
+    </div>
+
+    <div class="hongbao" id="bang">
+        <div class="hbhead">
+            <h2>领取红包排行榜</h2>
+        </div>
+        <div class="hbbody">
+            <div class="hbmask"></div>
+            <div id="hblists">
+                <div id="hblist1">
+                    <ul>
+                        <li>
+                            <span>No.1</span>
+                            <img src="img/1.jpg" alt=""/>
+                            <span>李翠花</span>
+                            <span><b>2.88</b>元</span>
+                        </li>
+                        <li>
+                            <span>No.2</span>
+                            <img src="img/1.jpg" alt=""/>
+                            <span>李翠花</span>
+                            <span><b>2.88</b>元</span>
+                        </li>
+                        <li>
+                            <span>No.3</span>
+                            <img src="img/1.jpg" alt=""/>
+                            <span>李翠花</span>
+                            <span><b>2.88</b>元</span>
+                        </li>
+                        <li>
+                            <span>No.4</span>
+                            <img src="img/1.jpg" alt=""/>
+                            <span>李翠花</span>
+                            <span><b>2.88</b>元</span>
+                        </li>
+                        <li>
+                            <span>No.4</span>
+                            <img src="img/132.jpg" alt=""/>
+                            <span>李翠花</span>
+                            <span><b>2.88</b>元</span>
+                        </li>
+                        <li>
+                            <span>No.4</span>
+                            <img src="img/1.jpg" alt=""/>
+                            <span>李翠花</span>
+                            <span><b>2.88</b>元</span>
+                        </li>
+                        <li>
+                            <span>No.4</span>
+                            <img src="img/1.jpg" alt=""/>
+                            <span>李翠花</span>
+                            <span><b>2.88</b>元</span>
+                        </li>
+                        <li>
+                            <span>No.4</span>
+                            <img src="img/132.jpg" alt=""/>
+                            <span>李翠花</span>
+                            <span><b>2.88</b>元</span>
+                        </li>
+                        <li>
+                            <span>No.4</span>
+                            <img src="img/132.jpg" alt=""/>
+                            <span>李翠花</span>
+                            <span><b>2.88</b>元</span>
+                        </li>
+                    </ul>
+                </div>
+                <div id="hblist2"></div>
+            </div>
+        </div>
+    </div>
+
+    <!--图片展示区-->
+    <div class="picB">
+        <img src="img/p1.jpg" alt=""/>
+        <img src="img/p2.jpg" alt=""/>
+        <img src="img/p3.jpg" alt=""/>
+        <img src="img/p4.jpg" alt=""/>
+    </div>
+
+    <!--参与列表-->
+    <div class="peopleList">
+        <div class="listHead">
+            <img src="img/pic.png" alt=""/>
+        </div>
+        <div class="lists">
+            <div class="listItem">
+                <img src="img/1.jpg" alt=""/>
+
+                <p>小仙女儿</p>
+            </div>
+            <div class="listItem">
+                <img src="img/1.jpg" alt=""/>
+
+                <p>小仙女儿</p>
+            </div>
+            <div class="listItem">
+                <img src="img/1.jpg" alt=""/>
+
+                <p>小仙女儿</p>
+            </div>
+            <div class="listItem">
+                <img src="img/1.jpg" alt=""/>
+
+                <p>小仙女儿</p>
+            </div>
+            <div class="listItem">
+                <img src="img/1.jpg" alt=""/>
+
+                <p>小仙女儿</p>
+            </div>
+            <div class="listItem">
+                <img src="img/1.jpg" alt=""/>
+
+                <p>小仙女儿</p>
+            </div>
+            <div class="listItem">
+                <img src="img/1.jpg" alt=""/>
+
+                <p>小仙女儿</p>
+            </div>
+            <div class="listItem">
+                <img src="img/1.jpg" alt=""/>
+
+                <p>小仙女儿</p>
+            </div>
+            <div class="listItem">
+                <img src="img/1.jpg" alt=""/>
+
+                <p>小仙女儿</p>
+            </div>
+            <div class="listItem">
+                <img src="img/1.jpg" alt=""/>
+
+                <p>小仙女儿</p>
+            </div>
+            <div class="listItem">
+                <img src="img/1.jpg" alt=""/>
+
+                <p>小仙女儿</p>
+            </div>
+            <div class="listItem">
+                <img src="img/1.jpg" alt=""/>
+
+                <p>小仙女儿</p>
+            </div>
+            <div class="listItem">
+                <img src="img/1.jpg" alt=""/>
+
+                <p>小仙女儿</p>
+            </div>
+            <div class="listItem">
+                <img src="img/1.jpg" alt=""/>
+
+                <p>小仙女儿</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<div class="footer">
+  <ul>
+    <li class="fBtn" id="callp"><a href="#"><img src="img/phone.png" alt=""/></a></li>
+    <li class="ctBtn" id="join"><a href="#"><img src="img/立即参团.png" alt=""/></a></li>
+    <li class="fBtn"><a href="#bang"><img src="img/paiming.png" alt=""/></a></li>
+  </ul>
+</div>-->
+<div class="footer">
+    <ul>
+        <li class="fBtn" id="callp"><a href="#"><img src="img/phone.png" alt=""/></a></li>
+        <li class="fBtn" id="share"><a href="#"><img src="img/分享.png" alt=""/></a></li>
+        <li class="fBtn" id="backm"><a href="#"><img src="img/返利.png" alt=""/></a></li>
+        <li class="fBtn"><a href="#bang"><img src="img/paiming.png" alt=""/></a></li>
+    </ul>
+</div>
+<script src="js/jquery-1.11.3.js"></script>
+<!--滚动-->
+<script type="text/javascript">
+    window.onload = function () {
+        //alert(document.getElementById("showBoard").scrollTop);
+        var board = document.getElementById("showBoard");
+        var show1 = document.getElementById("show1");
+        var show2 = document.getElementById("show2");
+        show2.innerHTML = show1.innerHTML;
+        board.scrollTop = 0;
+        function scroll() {
+            if (board.scrollTop >= show1.offsetHeight) {
+                board.scrollTop = 0;
+            }
+            else {
+                board.scrollTop += 2;
+            }
+//      console.log(board.scrollTop);
+        }
+
+        <!--红包滚动-->
+        var timer1 = setInterval(scroll, 100);
+        var hblists = document.getElementById("hblists");
+        var hblist1 = document.getElementById("hblist1");
+        var hblist2 = document.getElementById("hblist2");
+        hblist2.innerHTML = hblist1.innerHTML;
+        hblists.scrollTop = 0;
+        function scroll2() {
+            if (hblists.scrollTop >= hblist1.offsetHeight) {
+                hblists.scrollTop = 0;
+            }
+            else {
+                hblists.scrollTop += 2;
+            }
+//      console.log(board.scrollTop);
+        }
+
+        var timer2 = setInterval(scroll2, 50);
+    }
+</script>
+<!--背景音乐控制-->
+<script>
+    function playPause() {
+        var music = document.getElementById('music2');
+        var music_btn = $('#music_btn2');
+        if (music.paused) {
+            music.play();
+            music_btn.removeClass('pause');
+        }
+        else {
+            music.pause();
+            music_btn.addClass('pause');
+        }
+    }
+</script>
+<!--点击事件-->
+<script>
+    var Top = [] ;/*页面滚动过的距离*/
+    $(window).scroll(function() {
+        var top = $(window).scrollTop();
+        Top.push(top);
+//    console.dir(Top);
+    });
+    $('#share').on('click', function () {
+        $('#shareM').css('display', 'block');
+        stop();
+    });
+    $('#zBtn').on('click', function () {
+//    $('#zBtnM').css('display', 'block');
+        $('#joinM').css('display', 'block');
+        stop();
+        document.documentElement.style.marginTop=0;
+    });
+    function join() {
+        $('#zBtnM').css('display', 'none');
+        $('#joinM').css('display', 'block');
+        stop();
+    }
+    $('.footer ul').on('click', 'li', function () {
+//  console.log(this.id==='callp');
+        if (this.id === 'callp') {
+            $('#phoneM').css('display', 'block');
+            stop();
+        } else if (this.id === 'join') {
+            $('#joinM').css('display', 'block');
+            stop();
+        }
+    });
+    $(document).on('mousedown', function (e) {
+        if ($(e.target).is($('.modal'))) {
+            $(e.target).css('display', 'none');
+//    $('#phoneM').css('display','none');
+            move();
+        }
+    });
+    /***禁止滑动***/
+    function stop() {
+        var top = 0;
+        var length = Top.length;
+        if(length == 0) {
+            top = 0;
+        }else {
+            top = -Top[length-1];/*最后一次滚动过的距离*/
+        }
+        document.documentElement.style.overflow = 'hidden';
+        console.dir('1');
+        console.dir(-Top[length-1]+'px');
+
+        document.documentElement.style.marginTop=-Top[length-1]+'px';
+    };
+    /***取消滑动限制***/
+    function move() {
+        var length = Top.length;
+        console.dir('2');
+        console.dir(-Top[length-2]+'px');
+        document.documentElement.style.marginTop=0;
+        $(window).scrollTop(Top[length-2]);
+        document.documentElement.style.overflow = '';
+    };
+</script>
+<!--活动倒计时-->
+<script language="javascript" type="text/javascript">
+    function leftTimer(year, month, day, hour, minute, second) {
+        var leftTime = (new Date(year, month - 1, day, hour, minute, second)) - (new Date()); //计算剩余的毫秒数
+//    console.log(new Date(year,month-1,day,hour,minute,second));
+//    console.log(new Date());
+        var days = parseInt(leftTime / 1000 / 60 / 60 / 24, 10); //计算剩余的天数
+        var hours = parseInt(leftTime / 1000 / 60 / 60 % 24, 10); //计算剩余的小时
+        var minutes = parseInt(leftTime / 1000 / 60 % 60, 10);//计算剩余的分钟
+        var seconds = parseInt(leftTime / 1000 % 60, 10);//计算剩余的秒数
+        days = checkTime(days);
+        hours = checkTime(hours);
+        minutes = checkTime(minutes);
+        seconds = checkTime(seconds);
+        var html = `<p><span class="td">${days}</span>天<span class="th">${hours}</span>时<span class="tm">${minutes}</span>分<span class="ts">${seconds}</span>秒</p>
+`;
+        document.getElementById("timer").innerHTML = html;
+    }
+    setInterval("leftTimer(2018,9,12,23,59,59)", 1000);
+    function checkTime(i) { //将0-9的数字前面加上0，例1变为01
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+
+</script>
+</body>
+</html>
